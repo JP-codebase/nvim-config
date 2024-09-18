@@ -1,4 +1,5 @@
 return {
+  -- Catppuccin
   {
     "catppuccin/nvim",
     lazy = false,
@@ -8,6 +9,9 @@ return {
        --vim.cmd.colorscheme "catppuccin"
     end,
   },
+----------------------------------------------------------------------------------
+
+-- Rose-pine
   {
     "rose-pine/neovim",
     lazy = false,
@@ -86,6 +90,10 @@ return {
       -- vim.cmd("colorscheme rose-pine-dawn")
     end,
   },
+
+  ------------------------------------------------------------------------------------------
+
+  -- Ares
   {
     "ab-dx/ares.nvim",
     dependencies = {
@@ -93,8 +101,8 @@ return {
     },
     name = "ares",
     priority = 1000,
-    config = function()
-       vim.cmd.colorscheme "ares"
-    end
+    -- config = function()
+    --   vim.cmd.colorscheme "ares"
+    -- end
   },
 }
