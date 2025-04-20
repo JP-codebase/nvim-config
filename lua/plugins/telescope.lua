@@ -13,6 +13,9 @@ return {
     config = function()
       -- This is your opts table
       require("telescope").setup {
+        defaults = {
+          -- cwd = vim.fn.getcwd(),
+        },
         extensions = {
           ["ui-select"] = {
             require("telescope.themes").get_dropdown {}

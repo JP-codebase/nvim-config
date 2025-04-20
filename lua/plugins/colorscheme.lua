@@ -6,11 +6,10 @@ return {
 		name = "catppuccin",
 		priority = 1000,
 		config = function()
-  
 			--vim.cmd.colorscheme "catppuccin"
-      -- disable_background = true,
-      -- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
-      -- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
+			-- disable_background = true,
+			-- vim.api.nvim_set_hl(0, "Normal", {bg = "none"})
+			-- vim.api.nvim_set_hl(0, "NormalFloat", {bg = "none"})
 		end,
 	},
 	----------------------------------------------------------------------------------
@@ -38,6 +37,7 @@ return {
 					bold = false,
 					italic = false,
 					transparency = true,
+					-- transparency = false,
 				},
 
 				groups = {
@@ -109,4 +109,21 @@ return {
 		--   vim.cmd.colorscheme "ares"
 		-- end
 	},
+ ---------------------------------------------------------------------------------------------
+
+  -- Aurora
+   {
+    'ray-x/aurora',
+    init = function()
+      -- vim.g.aurora_italic = 1
+      -- vim.g.aurora_transparent = 0
+      -- vim.g.aurora_bold = 1
+    end,
+    config = function()
+        -- vim.cmd.colorscheme "aurora"
+        -- override defaults
+        vim.api.nvim_set_hl(0, '@number', {fg='#e933e3'})
+    end
+    }
 }
+

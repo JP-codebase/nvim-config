@@ -5,9 +5,24 @@ return {
     "nvim-lua/plenary.nvim",
     "nvim-tree/nvim-web-devicons", -- not strictly required, but recommended
     "MunifTanjim/nui.nvim",
-    -- "3rd/image.nvim", --Optional image support in preview window: See `# Preview Mode` for more information
   },
+
   config = function()
-    vim.keymap.set('n', '<C-l>', ':Neotree filesystem toggle<CR>', {})
-  end
+    -- require("neo-tree").setup({
+      -- close_if_last_window = true,
+      -- filesystem = {
+        -- hijack_netrw_behavior = "disabled",
+        -- follow_current_file = {
+        --   enabled = false,
+        -- },
+        -- bind_to_cwd = false,
+        -- filtered_items = {
+        -- hide_dotfiles = false,
+        -- hide_gitignored = false,
+        -- },
+      -- },
+    -- })
+
+    vim.keymap.set("n", "<C-l>", ":Neotree filesystem toggle <CR>", { desc = "Toggle Neo-tree" })
+  end,
 }

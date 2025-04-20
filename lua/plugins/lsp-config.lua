@@ -11,7 +11,7 @@ return {
 		lazy = false,
 		config = function()
 			require("mason-lspconfig").setup({
-				ensure_installed = { "lua_ls", "pyright" },
+				ensure_installed = { "lua_ls", "pyright", "clangd" },
 			})
 		end,
 	},
@@ -31,15 +31,26 @@ return {
 			})
 
 			lspconfig.clangd.setup({
+
+				-- on_attach = function(client, bufnr)
+				-- 	-- Disable clangd's formatting provider so that null-ls takes precedence.
+				-- 	client.server_capabilities.documentFormattingProvider = false
+				-- end,
+
 				capabilities = capabilities,
 				cmd = {
 					"clangd",
 					"--background-index",
 					"--clang-tidy",
 					"--header-insertion=iwyu",
-					"--completion-style=detailed",
+					"--header-insertion-decorators",
 					"--function-arg-placeholders",
-					"--fallback-style=llvm",
+					"--completion-style=detailed",
+
+					"--fallback-style=LLVM",
+				},
+				init_options = {
+					fallbackFlags = { "--std=c++20" },
 				},
 			})
 

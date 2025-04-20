@@ -7,6 +7,7 @@ vim.opt.smartindent = true
 
 -- Column
 -- vim.opt.colorcolumn = "80"
+-- vim.opt.textwidth = 80
 vim.opt.nu = true
 vim.opt.relativenumber = true
 
